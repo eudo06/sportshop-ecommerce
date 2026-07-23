@@ -1,0 +1,43 @@
+.login-container,
+.register-container {
+  min-height: calc(100vh - 75px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.form-container a {
+  color: var(--accent-gold);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.form-container a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-neon);
+  transition: width 0.3s;
+}
+
+.form-container a:hover {
+  color: var(--text-primary);
+  text-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+}
+
+.form-container a:hover::after {
+  width: 100%;
+}
+
+.form-container p {
+  position: relative;
+  z-index: 1;
+  color: var(--text-secondary);
+}
+

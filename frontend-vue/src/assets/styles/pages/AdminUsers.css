@@ -1,0 +1,94 @@
+.admin-users-container {
+  padding: 40px 0;
+}
+
+.admin-users-container .admin-container {
+  background: var(--bg-glass);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.admin-users-container .admin-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 0, 229, 0.05) 0%, transparent 70%);
+  animation: rotate 60s linear infinite;
+  will-change: transform;
+  pointer-events: none;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.admin-users-container .cart-table {
+  position: relative;
+  z-index: 1;
+}
+
+.admin-users-container .cart-table tbody tr {
+  transition: all 0.3s;
+}
+
+.admin-users-container .cart-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateX(5px);
+}
+
+.admin-users-container .cart-table td {
+  color: var(--text-secondary);
+  font-size: 15px;
+}
+
+.admin-users-container .cart-table td:first-child {
+  font-weight: 700;
+  color: var(--accent-gold);
+}
+
+.admin-users-container .cart-table td:nth-child(4) {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+}
+
+.admin-users-container .cart-table td:nth-child(5) {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 13px;
+}
+
+.admin-users-container .cart-table td:nth-child(5) span {
+  padding: 6px 12px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.admin-users-container .cart-table td:nth-child(5) span:has-text("Banned") {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.admin-users-container .cart-table td:nth-child(5) span:has-text("Active") {
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
